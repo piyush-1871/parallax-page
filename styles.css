@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "sans-serif";
+}
+
+.wrapper {
+  height: 100vh;
+  overflow-y: auto; /* for activating scroll in y direction  */
+  overflow-x: hidden; /* for hiding scroll in x direction */
+  perspective: 10px; /* to turn on 3d */
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform-style: preserve-3d; /* 3d ko preserve rkhne ke lie */
+  z-index: -1; /*  */
+}
+
+.background {
+  transform: translateZ(-20px) scale(4); /* background ko peeche krne ke lie z index or bada krne ke lie scale */
+}
+
+.foreground {
+  transform: translateZ(-10px) scale(2); /* background ko aage krne ke lie z index or bada krne ke lie scale */
+}
+
+.background,
+.foreground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+h1 {
+  position: absolute;
+  font-family: sans-serif;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 10rem;
+  letter-spacing: 4px;
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
